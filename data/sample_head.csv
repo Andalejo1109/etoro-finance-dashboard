@@ -1,0 +1,5 @@
+"Date","Way","Base amount","Base currency (name)","Base type","Quote amount","Quote currency","Exchange","Sent/Received from","Sent to","Fee amount","Fee currency (name)","Broker","Notes","Sync Base Holding","Leverage Metadata"
+"2025-03-31T16:32:39.000Z","BUY",0.961446,"SMH (VanEck Semiconductor ETF)","FUND",199.99999692,"USD","Nasdaq",,,,,"eToro",,false,
+"2025-03-31T18:54:18.000Z","SELL",0.961446,"SMH (VanEck Semiconductor ETF)","FUND",202.42284084,"USD","Nasdaq",,,,,"eToro",,false,
+"2025-04-01T14:33:01.000Z","BUY",14.373736,"NU (NU Holdings Ltd/Cayman Islands)","STOCK",149.9985594016,"USD","New York Stock Exchange",,,,,"eToro","This is a 5x leveraged trade of your USD 29.99 BUY position.",false,"MARGIN_OPEN[AMOUNT=-119.96,ASSET_ID=1]"
+"2025-04-01T14:40:07.000Z","SELL",14.373736,"NU (NU Holdings Ltd/Cayman Islands)","STOCK",150.2673482648,"USD","New York Stock Exchange",,,,,"eToro","This is the close transaction for a 5x leveraged trade of your USD 29.99 BUY position.",false,"MARGIN_CLOSE[AMOUNT=119.96,ASSET_ID=1]"
