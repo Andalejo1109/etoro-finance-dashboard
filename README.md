@@ -6,36 +6,37 @@ Dashboard analítico de cartera de inversiones en bolsa, construido como **parci
 **GitHub:** [Andalejo1109](https://github.com/Andalejo1109)  
 **eToro:** [@Andalejo1109](https://www.etoro.com/people/andalejo1109)
 
+Repo: https://github.com/Andalejo1109/etoro-finance-dashboard
+
 ---
 
-## Qué hay en este repo
+## Origen
 
-| Ruta | Descripción |
+Correo del 11 sep 2026, asunto `finance dashboard etoro to github` (`andres.rodriguezlo@usa.edu.co` → `alejo1109@gmail.com`), con tres adjuntos:
+
+1. `Parcial 1 bases de datos 20263 (1) (1).pdf` — enunciado
+2. `delta_Cartera principal_250802026_1.csv` — extracto eToro
+3. `parcial 1 - Valery Johanna Rubiano Castro.pbix` — entrega de ejemplo
+
+## Qué hay ahora en el repo
+
+| Ruta | Estado |
 |---|---|
-| `docs/Parcial_1_bases_de_datos_20263.pdf` | Enunciado del examen práctico (primer corte). |
-| `docs/enunciado.md` | Enunciado en Markdown (misma rúbrica). |
-| `data/delta_Cartera_principal_250802026_1.csv` | Export de operaciones de eToro usado en el caso de estudio. |
-| `examples/parcial-1-Valery-Johanna-Rubiano-Castro.pbix` | Entrega de ejemplo en Power BI Desktop (estudiante). |
+| `README.md` / `LICENSE` / `.gitignore` | Listo |
+| `docs/enunciado.md` | Listo (rúbrica en Markdown) |
+| `docs/Parcial_1_bases_de_datos_20263.pdf` | Pendiente de upload (binario) |
+| `data/delta_Cartera_principal_250802026_1.csv` | Pendiente de upload (216 KB) |
+| `examples/parcial-1-Valery-Johanna-Rubiano-Castro.pbix` | Pendiente de upload (binario) |
 
-El CSV es un extracto histórico de operaciones (broker eToro) con ~1.383 filas entre marzo 2025 y agosto 2026. La suma de `Quote amount` es ~USD/EUR 21.284, alineada con la validación pedida en el enunciado (~21 mil).
+Los tres archivos originales están en el correo. En GitHub: **Add file → Upload files** y arrástralos a `docs/`, `data/` y `examples/`.
 
 ---
 
 ## Caso de estudio
 
-Evaluar la capacidad de cargar, limpiar, transformar con condicionales y visualizar datos financieros para **tomar decisiones** sobre una cartera real.
+Evaluar la capacidad de cargar, limpiar, transformar con condicionales y visualizar datos financieros para tomar decisiones sobre una cartera real (broker eToro).
 
-Columnas principales del CSV:
-
-- `Date` — fecha/hora de la transacción (ISO 8601)
-- `Way` — BUY, SELL, DEPOSIT, WITHDRAW
-- `Base amount` — unidades del activo
-- `Base currency (name)` — ticker + nombre (SMH, SPYG, BRK-B, IEMG, VTI, ETH, etc.)
-- `Base type` — FUND, STOCK, CRYPTO, FIAT
-- `Quote amount` / `Quote currency` — monto y moneda (USD, EUR)
-- `Exchange`, `Fee amount`, `Broker`, `Notes`, `Leverage Metadata`
-
-Distribución rápida del extracto:
+El CSV completo tiene **1.383 filas** (mar 2025 – ago 2026). Suma de `Quote amount` ≈ **21.284** USD/EUR.
 
 - Operaciones: 1.227 BUY / 105 SELL / 25 DEPOSIT / 26 WITHDRAW
 - Tipos: 1.091 FUND, 213 STOCK, 28 CRYPTO, 51 FIAT
@@ -43,56 +44,42 @@ Distribución rápida del extracto:
 
 ---
 
-## Rúbrica del parcial (resumen)
+## Rúbrica (resumen)
 
-**Parte I — Preparación y transformación (10%)**  
-Carga del CSV, limpieza, tipos de dato, condicionales y columnas calculadas (incluye conversión aproximada a COP).
+**Parte I — Preparación (10%)** — carga, limpieza, condicionales, columna COP.
 
 **Parte II — Visualización (50%)**
 
-1. KPIs en tarjetas: conteo de operaciones, volumen USD/EUR, volumen COP  
-2. Línea temporal de volumen USD por mes, diferenciando BUY vs SELL  
-3. Tree map por activo + pie de moneda  
-4. Columnas por `Base type` + barras Top 5  
-5. Segmentadores: fechas, tipo de operación, tipo de activo  
+1. KPIs: conteo, volumen USD/EUR, volumen COP
+2. Línea temporal USD, BUY vs SELL
+3. Tree map por activo + pie de moneda
+4. Columnas por `Base type` + Top 5
+5. Segmentadores: fecha, `Way`, `Base type`
 
 **Parte III — UI y análisis (40%)**
 
-- Identidad visual eToro (fondo oscuro, acento verde, logo)  
-- Análisis ejecutivo (máx. 3 párrafos): concentración/riesgo, psicología del inversor, plan de acción (DCA, rebalanceo, largo plazo)
+- Identidad eToro (fondo oscuro, verde, logo)
+- Análisis ejecutivo: concentración, psicología del inversor, plan (DCA, rebalanceo, largo plazo)
 
-Título del reporte: *Reporte analisis de portafolio de inversión*.  
-Subtítulo: *Analista: (nombre y apellido)*.
+Título: *Reporte analisis de portafolio de inversión*. Subtítulo: *Analista: (nombre)*.
 
----
-
-## Cómo abrir el dashboard
-
-1. Instalar [Power BI Desktop](https://www.microsoft.com/power-bi).
-2. Abrir `examples/parcial-1-Valery-Johanna-Rubiano-Castro.pbix`.
-3. Si pide la fuente, apuntar a `data/delta_Cartera_principal_250802026_1.csv`.
-4. Nota regional: el CSV usa **punto (.) como separador de miles** en algunos contextos; validar tipos al cargar.
+Detalle: [`docs/enunciado.md`](docs/enunciado.md).
 
 ---
 
 ## Hoja de ruta (desarrollo eToro)
 
-Este repositorio empieza como material académico. La idea es evolucionar el mismo caso hacia un desarrollo reutilizable:
-
+- [ ] Subir PDF, CSV completo y PBIX por la UI
 - [ ] Versión propia del `.pbix` (no solo la entrega de ejemplo)
 - [ ] Limpieza reproducible del CSV (Python / pandas)
-- [ ] KPIs alineados con la estrategia real (SPYG, SMH, BRK.B, IEMG, VTI + DCA)
-- [ ] Publicación de un reporte o app para copiers / comunidad LATAM
-- [ ] Automatizar refresh del extracto de operaciones
+- [ ] KPIs alineados con SPYG, SMH, BRK.B, IEMG, VTI + DCA
+- [ ] Reporte o app para copiers / comunidad LATAM
+- [ ] Refresh automático del extracto de operaciones
 
 ---
 
-## Privacidad y uso
+## Privacidad
 
-- El CSV es un extracto de operaciones de eToro usado con fines **educativos**.
-- El archivo `.pbix` de ejemplo es una entrega de estudiante; se publica como referencia pedagógica, no como producto oficial de eToro ni de la universidad.
-- eToro es marca de eToro Group Ltd. Este repo no está afiliado ni respaldado por eToro.
+El repo está **público**. El CSV es historial real de operaciones y el `.pbix` lleva el nombre de una estudiante. Si prefieres privacidad, cambia el repo a private en Settings → General → Danger Zone, o pide que lo deje privado.
 
-## Licencia
-
-Material académico + datos de ejemplo. Ver `LICENSE`.
+eToro es marca de eToro Group Ltd. Este repo no está afiliado ni respaldado por eToro.
