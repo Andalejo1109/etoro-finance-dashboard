@@ -1,0 +1,12 @@
+# Power BI
+*.pbix.tmp
+*.pbix.lock
+~$*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
